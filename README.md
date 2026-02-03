@@ -331,6 +331,10 @@ UI Update + Toast Notification
 - [ ] Reviews de produtos
 - [ ] Integração com pagamento
 
+### Transparência
+
+Para acelerar o desenvolvimento, utilizei IA (GitHub Copilot) como apoio em refatorações, debug e ajustes de UI/UX. Todas as decisões de arquitetura, lógica de negócio e testes foram feitas manualmente e revisadas para garantir consistência.
+
 ## 👨‍💻 Autor
 
 **Alisson Sveen**
