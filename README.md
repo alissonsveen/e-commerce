@@ -47,6 +47,20 @@ npm run dev
 
 Acesse: http://localhost:3000
 
+## Testes
+
+```bash
+npm test          # Modo watch
+npm run test:ci   # CI mode
+```
+
+**Cobertura:**
+
+- 17 testes unitários
+- formatPrice utility
+- useCartStore (Zustand)
+- ProductCard component
+
 ## Estrutura
 
 ```
@@ -92,6 +106,16 @@ src/
 - ChatBot com recomendações inteligentes
 - Busca avançada com múltiplos critérios
 - Animações profissionais
+- Testes unitários com Jest
+- SEO otimizado com metadata dinâmica
+- Acessibilidade WCAG compliant
+
+## Qualidade
+
+- TypeScript strict mode
+- ESLint configurado
+- Testes automatizados
+- Código limpo e documentado
 
 ## Licença
 
