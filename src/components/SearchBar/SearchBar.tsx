@@ -87,10 +87,10 @@ export function SearchBar() {
 	};
 
 	return (
-		<div ref={wrapperRef} className="relative w-full max-w-sm">
+		<div ref={wrapperRef} className="relative w-full max-w-sm" role="search">
 			<div className="relative">
 				<div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10">
-					<Search className="h-4 w-4 text-purple-600" />
+					<Search className="h-4 w-4 text-purple-600" aria-hidden="true" />
 				</div>
 				<Input
 					type="text"
@@ -103,6 +103,10 @@ export function SearchBar() {
 						}
 					}}
 					className="pl-9 pr-9 bg-white border-purple-200 focus:border-purple-400 transition-colors"
+					aria-label="Buscar produtos"
+					aria-autocomplete="list"
+					aria-controls="search-results"
+					aria-expanded={isOpen}
 				/>
 				{search && (
 					<Button
@@ -118,7 +122,7 @@ export function SearchBar() {
 			</div>
 
 			{isOpen && (
-				<Card className="absolute z-50 w-full mt-2 shadow-lg max-h-[400px] overflow-auto">
+				<Card className="absolute z-50 w-full mt-2 shadow-lg max-h-[400px] overflow-auto" id="search-results" role="listbox">
 					<CardContent className="p-2">
 						{filteredProducts.length > 0 ? (
 							<div className="space-y-1">
@@ -128,6 +132,8 @@ export function SearchBar() {
 										onClick={() => handleSelect(product.id)}
 										className="w-full text-left px-3 py-2 rounded-md hover:bg-purple-50 transition-colors cursor-pointer"
 										type="button"
+										role="option"
+										aria-selected="false"
 									>
 										<div className="flex items-center gap-3">
 											<div className="flex-1">

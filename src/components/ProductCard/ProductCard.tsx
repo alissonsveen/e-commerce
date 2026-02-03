@@ -30,13 +30,13 @@ export function ProductCard({ product }: ProductCardProps) {
 	};
 
 	return (
-		<Link href={`/products/${product.id}`} className="group">
+		<Link href={`/products/${product.id}`} className="group" aria-label={`Ver detalhes de ${product.name}`}>
 			<Card className="overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-gray-100">
 				<CardContent className="p-0">
 					<div className="relative aspect-square overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
 						<Image
 							src={product.image}
-							alt={product.name}
+							alt={`Imagem do produto ${product.name}`}
 							fill
 							className="object-cover transition-transform duration-500 group-hover:scale-110"
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -83,9 +83,9 @@ export function ProductCard({ product }: ProductCardProps) {
 							disabled={product.stock === 0}
 							size="icon"
 							className="group-hover:scale-110 transition-transform shadow-md hover:shadow-lg"
-							aria-label="Adicionar ao carrinho"
+							aria-label={`Adicionar ${product.name} ao carrinho`}
 						>
-							<ShoppingCart size={20} />
+							<ShoppingCart size={20} aria-hidden="true" />
 						</Button>
 					</div>
 				</CardFooter>
